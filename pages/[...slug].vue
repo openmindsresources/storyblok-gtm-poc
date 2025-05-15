@@ -40,7 +40,6 @@ async function fetchGtmContainerId() {
 }
 
 const gtmContainerId = await fetchGtmContainerId();
-const chatAppRoot = 'https://nsbluescope-my.web.app';
 
 useHead(() => {
   const script_array = [
@@ -52,16 +51,11 @@ useHead(() => {
       defer: true,
     },
     {
-      innerHTML: `window.overrideAssetBase = '${chatAppRoot}';`,
-      tagPosition: 'bodyOpen',
-      type: 'text/javascript',
-    },
-    {
-      src: `${chatAppRoot}/flutter_bootstrap.js`,
+      src: 'https://nsbluescope-my.web.app/flutter_bootstrap.js',
       tagPosition: 'bodyClose',
     },
     {
-      src: `${chatAppRoot}/chat.js`,
+      src: 'https://nsbluescope-my.web.app/chat.js',
       tagPosition: 'bodyClose',
     }
   ];
