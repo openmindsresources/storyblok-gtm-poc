@@ -1,7 +1,7 @@
 <template>
   <a
     v-editable="blok"
-    class="w-full p-12 bg-[#f7f6fd] rounded-[5px] text-center"
+    class="download-button w-full p-12 bg-[#f7f6fd] rounded-[5px] text-center"
     :href="blok.filename"
     :data-id="blok.id"
   >
@@ -9,6 +9,6 @@
 </a>
 </template>
 
-<script lang="ts"setup>
+<script setup>
 defineProps({ blok: Object });
 </script>

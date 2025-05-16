@@ -1,7 +1,9 @@
 <template>
-     <DownloadButton v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
+     <div class="download-list">
+          <DownloadButton v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
+     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 defineProps({ blok: Object });
 </script>
