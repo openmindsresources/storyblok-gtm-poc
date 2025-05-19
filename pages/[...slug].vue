@@ -1,13 +1,16 @@
 <template>
   <div>
     <StoryblokComponent v-if="story" :blok="story.content" />
-    <!-- Chat Container -->
-    <div class="fixed bottom-0 right-4">
+    <!-- Chat Flutter Container -->
+    <!-- <div class="fixed bottom-0 right-4">
       <button x-on:click="open = !open" class="fixed bottom-2 right-4 z-10 w-[50px] h-[50px] bg-blue-500 text-white rounded-full">
         <i class="ph ph-chat"></i>
       </button>
       <div id="chat-container" class="w-[400px] h-[500px] rounded-lg overflow-hidden mb-15" x-show="open"></div>
-    </div>
+    </div> -->
+
+    <!-- ChatWidget Web -->
+    <div id="chat-widget-container" data-user-id="nsbs-user" data-backend-url="https://backend--nsbluescope-my.us-central1.hosted.app/api/chat/"></div>
   </div>
 </template>
 <script setup>
@@ -107,15 +110,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       src: '//unpkg.com/alpinejs',
       defer: true,
     },
-    {
-      src: 'https://nsbluescope-my.web.app/flutter_bootstrap.js',
-      tagPosition: 'bodyClose',
-    },
-    {
-      src: 'https://nsbluescope-my.web.app/chat.js',
-      tagPosition: 'bodyClose',
-    }
   ];
+
+  // Install Chat Flutter
+  // allScriptArray.push({
+  //   src: 'https://nsbluescope-my.web.app/flutter_bootstrap.js',
+  //   tagPosition: 'bodyClose',
+  // });
+  // allScriptArray.push({
+  //   src: 'https://nsbluescope-my.web.app/chat.js',
+  //   tagPosition: 'bodyClose',
+  // });
+  // allScriptArray.push({
+  //   src: 'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css',
+  //   tagPosition: 'bodyClose',
+  // });
+  // allScriptArray.push({
+  //   src: 'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css',
+  //   tagPosition: 'bodyClose',
+  // });
+  // allScriptArray.push({
+  //   src: 'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css',
+  //   tagPosition: 'bodyClose',
+  // });
+
+  // Install ChatWidget
+  allScriptArray.push({
+    src: 'https://nsbs-chat-plugin.web.app/stream-chat-widget.js',
+    tagPosition: 'bodyClose',
+  });
+  allScriptArray.push({
+    hid: 'chatWidget',
+    innerHTML: `
+        document.addEventListener('alpine:init', () => {
+            if (window.StreamAiChatWidget && window.StreamAiChatWidget.init) {
+                window.StreamAiChatWidget.init('#chat-widget-container');
+            }
+        });`,
+    type: 'text/javascript',
+    tagPosition: 'bodyClose',
+  });
 
   return {
     script: allScriptArray,
