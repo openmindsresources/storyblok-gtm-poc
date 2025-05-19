@@ -150,6 +150,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     type: 'text/javascript',
     tagPosition: 'bodyClose',
   });
+  linkArray.push({
+    rel: 'stylesheet',
+    href: 'https://nsbs-chat-plugin.web.app/stream-chat-widget.css',
+  });
 
   return {
     script: allScriptArray,
