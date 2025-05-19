@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <StoryblokComponent v-if="story" :blok="story.content" />
+  <div v-if="blok && blok.content" class="flex flex-col gap-4">
+    <StoryblokComponent v-for="blok_item in blok.content.body" :key="blok_item._uid" :blok="blok_item"/>
+
     <!-- Chat Flutter Container -->
     <!-- <div class="fixed bottom-0 right-4">
       <button x-on:click="open = !open" class="fixed bottom-2 right-4 z-10 w-[50px] h-[50px] bg-blue-500 text-white rounded-full">
@@ -9,19 +10,18 @@
       <div id="chat-container" class="w-[400px] h-[500px] rounded-lg overflow-hidden mb-15" x-show="open"></div>
     </div> -->
 
-    <!-- ChatWidget Web -->
+    <!-- Chat Widget Web -->
     <div id="chat-widget-container" data-user-id="nsbs-user" data-backend-url="https://backend--nsbluescope-my.us-central1.hosted.app/api/chat/"></div>
   </div>
 </template>
 <script setup>
-const { slug } = useRoute().params
+const { params } = useRoute();
+
+const slug = params.slug && params.slug.length > 0 ? params.slug.join('/') : '';
     
 const country = 'my';
 
-const story = await useAsyncStoryblok(
-    slug && slug.length > 0 ? slug.join('/') : '',
-    { version: 'draft' }
-);
+const blok = await useAsyncStoryblok(slug, { version: 'draft' });
 
 async function fetchDataSourceValue(datasource, entryName) {  
   try {

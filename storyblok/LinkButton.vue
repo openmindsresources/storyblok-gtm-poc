@@ -1,5 +1,5 @@
 <template>
-  <div class="link-button">
+  <div class="link-button" v-editable="blok">
     <a :href="'/'+blok.link.cached_url" class="link-button__link">{{ blok.label }}</a>
   </div>
 </template>
