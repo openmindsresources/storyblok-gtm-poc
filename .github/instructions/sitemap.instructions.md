@@ -1,0 +1,25 @@
+---
+applyTo: '**'
+---
+# Sitemap
+- Homepage: `docs/layouts/layout-homepage.md`
+  - (..Roles: Homeowner | Professional | Contractor): `docs/layouts/layout-professional.md`
+  - Product & Application: `docs/layouts/layout-product-and-application.md`
+    - (...Brand Pages): `docs/layouts/layout-product.md`
+  - Project Inspiration
+    - (...Project Pages)
+  - Project Segmentation
+    - Residential
+    - Commercial
+    - Industrial
+    - Institution & Others
+  - Resources & Support
+    - Articles: `docs/layouts/layout-list-article-news.md`
+        - (...Article Pages): `docs/layouts/layout-article-news.md`
+    - E-Library: `docs/layouts/layout-e-library.md`
+        - (...Download List): `none`
+  - Company
+    - News & Events
+    - Careers
+  - About Us
+  - Contact Us: `docs/layouts/layout-contact-us.md`

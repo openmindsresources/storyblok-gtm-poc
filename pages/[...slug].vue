@@ -156,7 +156,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   });
 
   return {
-    title: story?.value?.name,
+    title: story?.value?.content?.page_title,
+    meta: [
+      { name: 'description', content: story?.value?.content?.page_description },
+      { name: 'og:title', content: story?.value?.content?.page_title },
+      { name: 'og:description', content: story?.value?.content?.page_description },
+    ],
     script: allScriptArray,
     noscript: noscriptArray,
     link: linkArray,
