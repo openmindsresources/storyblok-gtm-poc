@@ -1,6 +1,6 @@
 <template>
-  <div v-if="blok && blok.content" class="flex flex-col gap-4">
-    <StoryblokComponent v-for="blok_item in blok.content.body" :key="blok_item._uid" :blok="blok_item"/>
+  <div v-if="story && story.content" class="flex flex-col gap-4">
+    <StoryblokComponent v-for="blok_item in story.content.body" :key="blok_item._uid" :blok="blok_item"/>
 
     <!-- Chat Flutter Container -->
     <!-- <div class="fixed bottom-0 right-4">
@@ -17,11 +17,11 @@
 <script setup>
 const { params } = useRoute();
 
-const slug = params.slug && params.slug.length > 0 ? params.slug.join('/') : '';
+const slug = params.slug && params.slug.length > 0 ? params.slug.join('/') : 'home';
     
 const country = 'my';
 
-const blok = await useAsyncStoryblok(slug, { version: 'draft' });
+const story = await useAsyncStoryblok(slug, { version: 'draft' });
 
 async function fetchDataSourceValue(datasource, entryName) {  
   try {
@@ -156,6 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   });
 
   return {
+    title: story?.value?.name,
     script: allScriptArray,
     noscript: noscriptArray,
     link: linkArray,

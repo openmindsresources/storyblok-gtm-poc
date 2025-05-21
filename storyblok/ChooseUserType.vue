@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-row items-center justify-center gap-4">
-        <button class="button" @click="goToHome">Homeowner</button>
-        <button class="button" @click="goToHome">Landlord</button>
-        <button class="button" @click="goToHome">Tenant</button>
+        <button class="button choose-user-type-button" @click="goToHome">Homeowner</button>
+        <button class="button choose-user-type-button" @click="goToHome">Landlord</button>
+        <button class="button choose-user-type-button" @click="goToHome">Tenant</button>
     </div>
 </template>
 
