@@ -1,7 +1,8 @@
 <template>
   <div v-if="story && story.content" class="flex flex-col gap-4">
+    <PageHeader/>
     <StoryblokComponent v-for="blok_item in story.content.body" :key="blok_item._uid" :blok="blok_item"/>
-
+    <PageFooter/>
     <!-- Chat Flutter Container -->
     <!-- <div class="fixed bottom-0 right-4">
       <button x-on:click="open = !open" class="fixed bottom-2 right-4 z-10 w-[50px] h-[50px] bg-blue-500 text-white rounded-full">

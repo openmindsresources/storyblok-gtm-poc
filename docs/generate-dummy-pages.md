@@ -1,4 +1,4 @@
-# Generate Dummy Pages
+# PRD: Generate Dummy Pages
 
 ## Objective
 Create all required static dummy pages based on the sitemap to simulate Google Tag Manager and Google Analytics tracking, following the project rules and analytics tracking plan.
@@ -44,6 +44,12 @@ Create all required static dummy pages based on the sitemap to simulate Google T
 - The site is for simulation only; no real data or backend integration is required.
 - All pages/components should be static and ready for analytics event simulation.
 
+### 7. Generate HTML Code for Each Page
+- For each static component/page, generate the required HTML code structure based on the referenced layout file.
+- Use Tailwind CSS classes for styling and responsive/mobile-first design.
+- Ensure the HTML structure is ready for analytics event hooks (e.g., `@click`, `@submit`, etc.).
+- Include placeholder content and elements as needed to simulate real user interactions and analytics events.
+
 ---
 
 ## Deliverables
@@ -51,7 +57,8 @@ Create all required static dummy pages based on the sitemap to simulate Google T
 - Static components for all sitemap pages, using the correct layout.
 - All components registered in Storyblok.
 - Pages structured for easy analytics event simulation.
-- Documentation of component mapping and analytics event points.
+- **HTML code generated for each static page/component, based on the layout used.**
+- Documentation of component mapping, analytics event points, and HTML structure.
 
 ---
 

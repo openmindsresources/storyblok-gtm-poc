@@ -7,6 +7,11 @@ This site only use to simulate GoogleTag and Google Tag Manager
 ## Framework: NuxtJs
 - use Catch-all Route `pages/[...slug].vue`
 
+## Styling: Tailwind CSS
+- use Tailwind CSS for styling
+- use Tailwind CSS for responsive design
+- use Tailwind CSS for mobile first design
+
 ## Code Style & Principles
 - Implement DRY
 - Implement SOLID
