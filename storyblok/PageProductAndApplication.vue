@@ -1,7 +1,7 @@
 <template>
   <main class="min-h-screen flex flex-col bg-white">
     <!-- Hero Banner -->
-    <section class="relative flex items-center justify-center h-64 md:h-96 bg-gradient-to-r from-blue-600 to-blue-400 text-white mb-12">
+    <section class="relative flex items-center justify-center h-64 md:h-96 bg-blue-600 text-white mb-12">
       <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=1200&q=80');"></div>
       <div class="relative z-10 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow mb-2">Product & Application</h1>
