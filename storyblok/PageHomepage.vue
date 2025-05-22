@@ -7,37 +7,26 @@
       <div class="relative z-10 flex flex-col items-center">
         <h2 class="text-2xl md:text-4xl font-bold mb-4">Homepage</h2>
         <p class="mb-8 text-lg text-gray-600">Simulating Google Tag Manager & Analytics events for demo purposes.</p>
-        <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" @click="selectRole('Homeowner')">I'm a Homeowner</button>
-          <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700" @click="selectRole('Professional')">I'm a Professional</button>
-          <button class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700" @click="selectRole('Contractor')">I'm a Contractor</button>
-        </div>
       </div>
     </section>
+
+    <!-- Role Selection Modal -->
+    <div v-if="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+      <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md relative">
+        <button @click="showModal = false" data-tag="user_type_firewall" class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl font-bold">&times;</button>
+        <h3 class="text-xl font-semibold mb-6">Choose</h3>
+        <div class="flex flex-col gap-4">
+          <a class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" :href="'/role/homeowner'">I'm a Homeowner</a>
+          <a class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700" :href="'/role/professional'">I'm a Professional</a>
+          <a class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700" :href="'/role/contractor'">I'm a Contractor</a>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref } from 'vue'
 
-onMounted(() => {
-  // Simulate analytics: page view
-  // window.dataLayer.push({ event: 'page_view', page: 'homepage' })
-})
-
-function selectRole(role) {
-  // Simulate analytics: role selection
-  // window.dataLayer.push({ event: 'select_role', role })
-  // Redirect to role landing page
-  if (role === 'Homeowner') window.location.href = '/role/homeowner'
-  if (role === 'Professional') window.location.href = '/role/professional'
-  if (role === 'Contractor') window.location.href = '/role/contractor'
-}
+const showModal = ref(true)
 </script>
-
-<!--
-Layout: layout-homepage.md
-Analytics: page view (onMounted), role selection (button click)
--->
-
-<!-- Use the same approach as PageAboutUs.vue: implement professional, sectioned layouts for each Page component based on its layout file and sitemap mapping. -->
