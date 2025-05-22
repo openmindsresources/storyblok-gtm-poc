@@ -7,6 +7,7 @@
       <a href="/project-inspiration" class="text-blue-600 hover:underline" @click="trackNav('Project Inspiration')">Project Inspiration</a>
       <a href="/resources-support/articles" class="text-blue-600 hover:underline" @click="trackNav('Articles')">Articles</a>
       <a href="/company" class="text-blue-600 hover:underline" @click="trackNav('Company')">Company</a>
+      <a href="/e-library" class="text-blue-600 hover:underline" @click="trackNav('E-Library')">E-Library</a>
       <a href="/about-us" class="text-blue-600 hover:underline" @click="trackNav('About Us')">About Us</a>
       <a href="/contact-us" class="text-blue-600 hover:underline" @click="trackNav('Contact Us')">Contact Us</a>
     </nav>

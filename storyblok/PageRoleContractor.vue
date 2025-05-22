@@ -3,7 +3,7 @@
     <section class="flex-1 flex flex-col items-center justify-center bg-gray-50 py-16 px-4 text-center">
       <h2 class="text-2xl md:text-4xl font-bold mb-4">Welcome, Contractor!</h2>
       <p class="mb-8 text-lg text-gray-600">Access project tools, documentation, and support for contractors.</p>
-      <button class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700" @click="trackCta">Get Project Tools</button>
+      <a class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700" :href="'/project-inspiration'" @click="trackCta">Get Project Tools</a>
     </section>
   </main>
 </template>

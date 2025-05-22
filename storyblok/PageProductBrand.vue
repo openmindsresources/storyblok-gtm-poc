@@ -26,18 +26,15 @@
     </section>
 
     <!-- Downloads -->
-    <section class="max-w-4xl mx-auto px-4 mb-12">
-      <h2 class="text-2xl font-bold mb-4 text-blue-700">Downloads</h2>
-      <div class="flex flex-col md:flex-row gap-4">
-        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" @click="trackDownload('Brochure')">Download Brochure</button>
-        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" @click="trackDownload('Manual')">Download Manual</button>
-      </div>
-    </section>
+    <DownloadSection title="Technical Datasheet" type="technicalDatasheet" />
+
+    <DownloadSection title="Brochure" type="brochure" />
   </main>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
+import DownloadSection from './DownloadSection.vue'
 
 onMounted(() => {
   // Simulate analytics: page view

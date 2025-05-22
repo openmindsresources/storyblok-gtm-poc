@@ -3,7 +3,7 @@
     <section class="flex-1 flex flex-col items-center justify-center bg-gray-50 py-16 px-4 text-center">
       <h2 class="text-2xl md:text-4xl font-bold mb-4">Welcome, Professional!</h2>
       <p class="mb-8 text-lg text-gray-600">Discover solutions, case studies, and resources for professionals.</p>
-      <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700" @click="trackCta">View Case Studies</button>
+      <a class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700" :href="'/project-inspiration'" @click="trackCta">View Case Studies</a>
     </section>
   </main>
 </template>

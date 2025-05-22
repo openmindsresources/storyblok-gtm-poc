@@ -10,24 +10,15 @@
     </section>
 
     <!-- Download List -->
-    <section class="max-w-4xl mx-auto px-4 mb-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div v-for="item in downloads" :key="item.title" class="bg-white rounded shadow p-6 flex flex-col items-start">
-          <h3 class="text-xl font-semibold mb-2">{{ item.title }}</h3>
-          <p class="text-gray-600 mb-4">{{ item.description }}</p>
-          <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" @click="trackDownload(item.title)">Download</button>
-        </div>
-      </div>
-    </section>
+    <DownloadSection title="Technical Datasheet" type="technicalDatasheet" disableViewAll="true"/>
+
+    <DownloadSection title="Brochure" type="brochure" disableViewAll="true"/>
   </main>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const downloads = ref([
-  { title: 'Product Brochure', description: 'Comprehensive guide to our product range.' },
-  { title: 'Installation Manual', description: 'Step-by-step installation instructions.' },
-])
+import DownloadSection from './DownloadSection.vue'
 
 onMounted(() => {
   // Simulate analytics: page view
