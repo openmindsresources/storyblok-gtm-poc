@@ -6,8 +6,8 @@
     </div>
     <button
       class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 mt-2 flex items-center justify-center gap-2"
-      :data-filename="randomFileName(filename)"
-      @click="trackDownload(title)"
+      :data-filename="filename"
+      :data-group="group"
     >
       <DownloadIcon :size="18" color="#fff" />
       Download
@@ -22,17 +22,6 @@ const props = defineProps({
   title: String,
   description: String,
   filename: String,
+  group: String,
 })
-
-function trackDownload(label) {
-  // Simulate analytics: download click
-  // window.dataLayer.push({ event: 'download_click', label })
-}
-
-function randomFileName(base) {
-  const rand = Math.random().toString(36).substring(2, 8)
-  const ext = base.substring(base.lastIndexOf('.'))
-  const name = base.substring(0, base.lastIndexOf('.'))
-  return `${name}_${rand}${ext}`
-}
 </script>

@@ -8,6 +8,7 @@
             :title="item.title"
             :description="item.description"
             :filename="item.filename"
+            :group="title"
         />
     </div>
     <div v-if="!disableViewAll" class="mt-6 flex justify-end">

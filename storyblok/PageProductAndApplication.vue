@@ -12,12 +12,12 @@
     <!-- Filters -->
     <section class="max-w-4xl mx-auto px-4 mb-8">
       <div class="flex flex-wrap gap-4 justify-center mb-6">
-        <select class="border rounded p-2">
+        <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Types">
           <option>All Types</option>
           <option>Type A</option>
           <option>Type B</option>
         </select>
-        <select class="border rounded p-2">
+        <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Applications">
           <option>All Applications</option>
           <option>Application X</option>
           <option>Application Y</option>
@@ -25,12 +25,15 @@
       </div>
     </section>
 
-    <!-- Product List -->
+    <!-- setup:productList -->
     <section class="max-w-4xl mx-auto px-4 mb-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div v-for="product in products" :key="product" class="bg-white rounded shadow p-6 flex flex-col items-center">
-          <span class="text-lg font-semibold mb-2">{{ product.name }}</span>
-          <a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" @click="trackProduct(product)" :href="product.url">View Product</a>
+        <div v-for="item in productList?.data?.stories" :key="item.id" class="bg-white rounded shadow p-6 flex flex-col items-center">
+          <span class="text-lg font-semibold mb-2">{{ item.name }}</span>
+          <a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" 
+            :href="'/'+item.full_slug" 
+            data-tag="view_product_click" 
+            v-bind:data-value="item.name">View Product</a>
         </div>
       </div>
     </section>
@@ -38,25 +41,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const products = ref([
-  { name: 'Smart Home Hub', url: '/products/smart-home-hub' },
-  { name: 'Wireless Door Sensor', url: '/products/wireless-door-sensor' },
-  { name: 'Smart Thermostat', url: '/products/smart-thermostat' }
-])
-
-onMounted(() => {
-  // Simulate analytics: page view
-  // window.dataLayer.push({ event: 'page_view', page: 'product_and_application' })
+const productList = await useStoryblokApi().get('cdn/stories', {
+  "starts_with": "products",
 })
-
-function trackProduct(product) {
-  // Simulate analytics: product click
-  // window.dataLayer.push({ event: 'product_click', product })
-}
 </script>
-
-<!--
-Layout: layout-product-and-application.md
-Analytics: page view (onMounted), product click
--->
