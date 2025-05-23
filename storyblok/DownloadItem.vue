@@ -4,14 +4,15 @@
       <div class="text-lg font-semibold text-blue-800 mb-1">{{ title }}</div>
       <div class="text-gray-600 text-sm mb-2">{{ description }}</div>
     </div>
-    <button
+    <a
       class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 mt-2 flex items-center justify-center gap-2"
       :data-filename="filename"
       :data-group="group"
+      :href="url"
     >
       <DownloadIcon :size="18" color="#fff" />
       Download
-    </button>
+  </a>
   </div>
 </template>
 
@@ -23,5 +24,6 @@ const props = defineProps({
   description: String,
   filename: String,
   group: String,
+  url: String,
 })
 </script>
