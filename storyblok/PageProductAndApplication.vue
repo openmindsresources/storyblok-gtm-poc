@@ -11,7 +11,7 @@
 
     <!-- Filters -->
     <section class="max-w-4xl mx-auto px-4 mb-8">
-      <div class="flex flex-wrap gap-4 justify-center mb-6">
+      <form class="flex flex-wrap gap-4 justify-center mb-6">
         <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Types">
           <option>All Types</option>
           <option>Type A</option>
@@ -22,7 +22,7 @@
           <option>Application X</option>
           <option>Application Y</option>
         </select>
-      </div>
+      </form>
     </section>
 
     <!-- setup:productList -->
