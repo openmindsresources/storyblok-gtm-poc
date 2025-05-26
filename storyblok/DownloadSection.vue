@@ -16,6 +16,7 @@
         <a
             href="/e-library"
             data-tag="view_all_elibrary"
+            v-bind:data-group="title"
             class="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
         >
             View More
