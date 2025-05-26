@@ -33,7 +33,7 @@
           <a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" 
             :href="'/'+item.full_slug" 
             data-tag="view_product_click" 
-            v-bind:data-value="item.name">View Product</a>
+            v-bind:data-label="item.name">View Product</a>
         </div>
       </div>
     </section>
