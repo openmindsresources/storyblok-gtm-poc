@@ -18,6 +18,7 @@
           <option>Type B</option>
         </select>
         <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Applications" name="application">
+          <option>All Applications</option>
           <option>Application X</option>
           <option>Application Y</option>
         </select>
