@@ -12,13 +12,12 @@
     <!-- Filters -->
     <section class="max-w-4xl mx-auto px-4 mb-8">
       <form class="flex flex-wrap gap-4 justify-center mb-6">
-        <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Types">
+        <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Types" name="product_type">
           <option>All Types</option>
           <option>Type A</option>
           <option>Type B</option>
         </select>
-        <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Applications">
-          <option>All Applications</option>
+        <select class="border rounded p-2" data-tag="product_filter_use" data-label="All Applications" name="application">
           <option>Application X</option>
           <option>Application Y</option>
         </select>
