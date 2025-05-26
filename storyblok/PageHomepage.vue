@@ -16,9 +16,9 @@
         <button @click="showModal = false" data-tag="modal_dissmiss" class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl font-bold">&times;</button>
         <h3 class="text-xl font-semibold mb-6">Choose</h3>
         <div class="flex flex-col gap-4">
-          <a class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" :href="'/role/homeowner'" data-tag="audience_select">I'm a Homeowner</a>
-          <a class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700" :href="'/role/professional'" data-tag="audience_select">I'm a Professional</a>
-          <a class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700" :href="'/role/contractor'" data-tag="audience_select">I'm a Contractor</a>
+          <a class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" :href="'/role/homeowner'" data-label="homeowner" data-tag="audience_select">I'm a Homeowner</a>
+          <a class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700" :href="'/role/professional'" data-label="professional" data-tag="audience_select">I'm a Professional</a>
+          <a class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700" :href="'/role/contractor'" data-label="contractor" data-tag="audience_select">I'm a Contractor</a>
         </div>
       </div>
     </div>

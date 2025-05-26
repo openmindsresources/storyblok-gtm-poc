@@ -12,11 +12,11 @@
     <!-- Contact Form -->
     <section class="max-w-2xl mx-auto px-4 mb-12">
       <h2 class="text-2xl font-bold mb-4 text-blue-700">Send Us a Message</h2>
-      <form class="bg-white rounded shadow p-8 flex flex-col gap-4" @submit.prevent="trackSubmit">
-        <input type="text" placeholder="Name" class="border p-2 rounded" @focus="trackFocus('Name')" />
-        <input type="email" placeholder="Email" class="border p-2 rounded" @focus="trackFocus('Email')" />
-        <textarea placeholder="Message" class="border p-2 rounded" @focus="trackFocus('Message')"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
+      <form name="Contact Us" class="bg-white rounded shadow p-8 flex flex-col gap-4">
+        <input type="text" placeholder="Name" class="border p-2 rounded" />
+        <input type="email" placeholder="Email" class="border p-2 rounded" />
+        <textarea placeholder="Message" class="border p-2 rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" data-form_name="Contact Us" data-tag="contact_submit">Send Message</button>
       </form>
     </section>
 
@@ -41,26 +41,4 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  // Simulate analytics: page view
-  // window.dataLayer.push({ event: 'page_view', page: 'contact_us' })
-})
-
-function trackFocus(field) {
-  // Simulate analytics: input focus
-  // window.dataLayer.push({ event: 'form_focus', field })
-}
-
-function trackSubmit() {
-  // Simulate analytics: form submit
-  // window.dataLayer.push({ event: 'form_submit', form: 'contact_us' })
-  alert('Message sent! (Simulation)')
-}
 </script>
-
-<!--
-Layout: layout-contact-us.md
-Analytics: page view (onMounted), form focus, form submit
--->
